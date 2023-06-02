@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LDN</title>
+		<link rel="stylesheet" href="dist/css/style.min.css" />
+	</head>
+	<body class="full-height">
+		<nav class="nav nav__main">
+			<div class="nav-logo-wrapper"></div>
+			<form action="#" method="get">
+				<div class="nav__search--wrapper">
+					<div class="form-group select location">
+						<i class="icon ti ti-map-pin"></i>
+						<select name="location" id="location" class="form-control">
+							<option value="kathmandu">kathmandu</option>
+							<option value="lalitpur">lalitpur</option>
+							<option value="bhaktapur">bhaktapur</option>
+							<option value="chitwan">chitwan</option>
+							<option value="pokhara">pokhara</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="date" name="startDate" id="startDate" class="form-control" />
+					</div>
+					<div class="form-group">
+						<input type="date" name="endDate" id="endDate" class="form-control" />
+					</div>
+					<div class="button-group">
+						<button class="btn btn-global btn--primary">Search</button>
+					</div>
+				</div>
+			</form>
+			<div class="nav__rt-wrapper fl-row gap-2 al-center">
+				<div class="nav__notification-group notification-main">
+					<button class="btn btn-round-md btn--grey notification-base">
+						<i class="ti ti-bell"></i>
+					</button>
+					<div class="notification-drop">
+						<ul class="notification-list"></ul>
+					</div>
+				</div>
+				<div class="nav__user--group user__main dropdown-main">
+					<div class="nav__user--dropdown user__base dropdown-base">
+						<div class="user__base--image dropdown-base--image">
+							<img src="images/user.png" alt="User" />
+						</div>
+						<div class="user__base--text dropdown-base--text">Ares Shrestha</div>
+						<div class="user__base--icon dropdown-base--icon">
+							<i class="ti ti-chevron-down"></i>
+						</div>
+					</div>
+					<div class="user__drop dropdown-drop">
+						<ul class="user__options dropdown-options">
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Settings</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-settings"></i
+									></span>
+								</a>
+							</li>
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Logout</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-logout"></i
+									></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main id="app">
+			<div class="main-wrapper me-0 row al-stretch">
+				<section class="filter--options col-lg-2">
+					<h3 class="heading-5 mb-xs">Filters</h3>
+					<div class="filter-wrapper">
+						<div class="filter-group">
+							<div class="label">Region Lock</div>
+							<div class="form-group">
+								<label for="filterInside"
+									>Inside Area Only <input type="checkbox" name="filterInside" id="filterInside"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterOutside"
+									>Inside & Outside Area
+									<input type="checkbox" name="filterOutside" id="filterOutside"
+								/></label>
+							</div>
+						</div>
+						<div class="filter-group">
+							<div class="label">Transmission</div>
+
+							<div class="form-group">
+								<label for="filterAutomatic"
+									>Automatic <input type="checkbox" name="filterAutomatic" id="filterAutomatic"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterManual"
+									>Manual <input type="checkbox" name="filterManual" id="filterManual"
+								/></label>
+							</div>
+						</div>
+						<div class="filter-group">
+							<div class="label">Fuel</div>
+							<div class="form-group">
+								<label for="filterElectric"
+									>Electric <input type="checkbox" name="filterElectric" id="filterElectric"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterDiesel"
+									>Diesel <input type="checkbox" name="filterDiesel" id="filterDiesel"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterPetrol"
+									>Petrol <input type="checkbox" name="filterPetrol" id="filterPetrol"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterHybrid"
+									>Hybrid <input type="checkbox" name="filterHybrid" id="filterHybrid"
+								/></label>
+							</div>
+						</div>
+						<div class="filter-group">
+							<div class="label">Mileage</div>
+							<div class="fl-row">
+								<div class="form-group">
+									<label for="filterMileageStart"
+										>From
+										<input
+											type="number"
+											id="filterMileageStart"
+											name="filterMileageStart"
+											class="form-control"
+										/>
+									</label>
+								</div>
+								<div class="form-group">
+									<label for="filterMileageEnd"
+										>To
+										<input
+											type="number"
+											id="filterMileageEnd"
+											name="filterMileageEnd"
+											class="form-control"
+										/>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="filter-group">
+							<div class="label">Seats</div>
+							<div class="fl-row">
+								<div class="form-group">
+									<label for="filterSeatsStart"
+										>From
+										<input
+											type="number"
+											id="filterSeatsStart"
+											name="filterSeatsStart"
+											class="form-control"
+											value="2"
+										/>
+									</label>
+								</div>
+								<div class="form-group">
+									<label for="filterSeatsEnd"
+										>To
+										<input
+											type="number"
+											id="filterSeatsEnd"
+											name="filterSeatsEnd"
+											class="form-control"
+										/>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="filter-wrapper">
+						<div class="heading-5 wrapper--title">Filter by Car</div>
+						<div class="filter-group">
+							<div class="form-group">
+								<label for="filterSedan"
+									>Sedan <input type="checkbox" name="filterSedan" id="filterSedan"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterSUV"
+									>SUV <input type="checkbox" name="filterSUV" id="filterSUV"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterTruck"
+									>Truck <input type="checkbox" name="filterTruck" id="filterTruck"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterVan"
+									>Van <input type="checkbox" name="filterVan" id="filterVan"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterMotorcycle"
+									>Motorcycle <input type="checkbox" name="filterMotorcycle" id="filterMotorcycle"
+								/></label>
+							</div>
+							<div class="form-group">
+								<label for="filterBus"
+									>Bus <input type="checkbox" name="filterBus" id="filterBus"
+								/></label>
+							</div>
+						</div>
+						<div class="filter-group"></div>
+					</div>
+				</section>
+				<section class="main__list--wrapper col-lg-10">
+					<div class="main__list--view-switcher fl-row jc-between al-center">
+						<h2 class="heading-5 page-title">Showing Result for Vehicles</h2>
+						<ul class="main__list--view-options fl-row al-center gap-2">
+							<li class="main__list--view-item">
+								<button class="main__list--view-link btn btn--grey btn-icon-md">
+									<i class="ti ti-grid-dots"></i>
+								</button>
+							</li>
+							<li class="main__list--view-item">
+								<button class="main__list--view-link btn btn--grey btn-icon-md">
+									<i class="ti ti-list"></i>
+								</button>
+							</li>
+						</ul>
+					</div>
+					<div class="main__list--row row al-start">
+						<div class="col-6 col-md-4 col-lg-3">
+							<div class="vehicle__card">
+								<div class="location--wrapper">Inside Area Only</div>
+								<div class="vehicle__card--image df-image-wrapper">
+									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+								</div>
+								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+								<div class="vehicle__card--text-wrapper">
+									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+									<div class="vehicle__card--spec-grid py-xs">
+										<div class="spec-group group-row">
+											<div class="spec-title">Color:</div>
+											<div class="spec-value">
+												<div class="color-value">
+													<div class="color-circle" style="--color: #dc0019"></div>
+													Scarlet
+												</div>
+											</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+											<div class="spec-value">5 Seats</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">Auto</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">25 KM/L</div>
+										</div>
+									</div>
+
+									<div class="vehicle__card--action-group">
+										<button class="btn btn-global btn--grey">Check Out</button>
+										<button class="btn btn-global btn--primary">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3">
+							<div class="vehicle__card">
+								<div class="location--wrapper">Inside Area Only</div>
+								<div class="vehicle__card--image df-image-wrapper">
+									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+								</div>
+								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+								<div class="vehicle__card--text-wrapper">
+									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+									<div class="vehicle__card--spec-grid py-xs">
+										<div class="spec-group group-row">
+											<div class="spec-title">Color:</div>
+											<div class="spec-value">
+												<div class="color-value">
+													<div class="color-circle" style="--color: #dc0019"></div>
+													Scarlet
+												</div>
+											</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+											<div class="spec-value">5 Seats</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">Auto</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">25 KM/L</div>
+										</div>
+									</div>
+
+									<div class="vehicle__card--action-group">
+										<button class="btn btn-global btn--grey">Check Out</button>
+										<button class="btn btn-global btn--primary">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3">
+							<div class="vehicle__card">
+								<div class="location--wrapper">Inside Area Only</div>
+								<div class="vehicle__card--image df-image-wrapper">
+									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+								</div>
+								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+								<div class="vehicle__card--text-wrapper">
+									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+									<div class="vehicle__card--spec-grid py-xs">
+										<div class="spec-group group-row">
+											<div class="spec-title">Color:</div>
+											<div class="spec-value">
+												<div class="color-value">
+													<div class="color-circle" style="--color: #dc0019"></div>
+													Scarlet
+												</div>
+											</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+											<div class="spec-value">5 Seats</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">Auto</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">25 KM/L</div>
+										</div>
+									</div>
+
+									<div class="vehicle__card--action-group">
+										<button class="btn btn-global btn--grey">Check Out</button>
+										<button class="btn btn-global btn--primary">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3">
+							<div class="vehicle__card">
+								<div class="location--wrapper">Inside Area Only</div>
+								<div class="vehicle__card--image df-image-wrapper">
+									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+								</div>
+								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+								<div class="vehicle__card--text-wrapper">
+									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+									<div class="vehicle__card--spec-grid py-xs">
+										<div class="spec-group group-row">
+											<div class="spec-title">Color:</div>
+											<div class="spec-value">
+												<div class="color-value">
+													<div class="color-circle" style="--color: #dc0019"></div>
+													Scarlet
+												</div>
+											</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+											<div class="spec-value">5 Seats</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">Auto</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">25 KM/L</div>
+										</div>
+									</div>
+
+									<div class="vehicle__card--action-group">
+										<button class="btn btn-global btn--grey">Check Out</button>
+										<button class="btn btn-global btn--primary">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6 col-md-4 col-lg-3">
+							<div class="vehicle__card">
+								<div class="location--wrapper">Inside Area Only</div>
+								<div class="vehicle__card--image df-image-wrapper">
+									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+								</div>
+								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+								<div class="vehicle__card--text-wrapper">
+									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+									<div class="vehicle__card--spec-grid py-xs">
+										<div class="spec-group group-row">
+											<div class="spec-title">Color:</div>
+											<div class="spec-value">
+												<div class="color-value">
+													<div class="color-circle" style="--color: #dc0019"></div>
+													Scarlet
+												</div>
+											</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+											<div class="spec-value">5 Seats</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">Auto</div>
+										</div>
+										<div class="spec-group group-row">
+											<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+											<div class="spec-value">25 KM/L</div>
+										</div>
+									</div>
+
+									<div class="vehicle__card--action-group">
+										<button class="btn btn-global btn--grey">Check Out</button>
+										<button class="btn btn-global btn--primary">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<script src="dist/js/jquery.js"></script>
+		<script src="dist/js/tabler.js"></script>
+		<script src="dist/js/popper.js"></script>
+		<script src="dist/js/bootstrap.js"></script>
+		<script src="dist/js/swipper.js"></script>
+		<script src="dist/js/custom.js"></script>
+	</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LDN</title>
+		<link rel="stylesheet" href="dist/css/style.min.css" />
+	</head>
+	<body>
+		<nav class="nav nav__main">
+			<div class="nav-logo-wrapper"></div>
+			<form action="#" method="get">
+				<div class="nav__search--wrapper">
+					<div class="form-group select location">
+						<i class="icon ti ti-map-pin"></i>
+						<select name="location" id="location" class="form-control">
+							<option value="kathmandu">kathmandu</option>
+							<option value="lalitpur">lalitpur</option>
+							<option value="bhaktapur">bhaktapur</option>
+							<option value="chitwan">chitwan</option>
+							<option value="pokhara">pokhara</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="date" name="startDate" id="startDate" class="form-control" />
+					</div>
+					<div class="form-group">
+						<input type="date" name="endDate" id="endDate" class="form-control" />
+					</div>
+					<div class="button-group">
+						<button class="btn btn-global btn--primary">Search</button>
+					</div>
+				</div>
+			</form>
+			<div class="nav__rt-wrapper fl-row gap-2 al-center">
+				<div class="nav__notification-group notification-main">
+					<button class="btn btn-round-md btn--grey notification-base">
+						<i class="ti ti-bell"></i>
+					</button>
+					<div class="notification-drop">
+						<ul class="notification-list"></ul>
+					</div>
+				</div>
+				<div class="nav__user--group user__main dropdown-main">
+					<div class="nav__user--dropdown user__base dropdown-base">
+						<div class="user__base--image dropdown-base--image">
+							<img src="images/user.png" alt="User" />
+						</div>
+						<div class="user__base--text dropdown-base--text">Ares Shrestha</div>
+						<div class="user__base--icon dropdown-base--icon">
+							<i class="ti ti-chevron-down"></i>
+						</div>
+					</div>
+					<div class="user__drop dropdown-drop">
+						<ul class="user__options dropdown-options">
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Settings</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-settings"></i
+									></span>
+								</a>
+							</li>
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Logout</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-logout"></i
+									></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main id="app" class="py-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<a href="#" class="btn btn-global btn--grey">
+							<i class="ti ti-chevron-left"></i> Go Back
+						</a>
+					</div>
+					<div class="col-lg-12">
+						<header class="header__section">
+							<div class="row al-stretch jc-between">
+								<div class="col-12 col-lg-5">
+									<div class="heading__description--wrapper">
+										<h1 class="heading-3">Hyundai I20</h1>
+										<div class="vehicle__card--text-wrapper">
+											<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+											<div class="vehicle__number primary heading-6 py-xs">BA-05-PA-2004</div>
+										</div>
+										<div class="vehicle__owner my-xs">
+											<div class="vehicle__owner--image">
+												<img src="images/user.png" alt="" />
+											</div>
+											<div class="vehicle__owner--name">Hero Baby</div>
+										</div>
+										<div class="price-box heading-4 my-sm">Rs. 2500</div>
+
+										<div class="vehicle__card--spec-grid py-xs">
+											<div class="spec-group group-row">
+												<div class="spec-title">Color:</div>
+												<div class="spec-value">
+													<div class="color-value">
+														<div class="color-circle" style="--color: #dc0019"></div>
+														Scarlet
+													</div>
+												</div>
+											</div>
+											<div class="spec-group group-row">
+												<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+												<div class="spec-value">5 Seats</div>
+											</div>
+											<div class="spec-group group-row">
+												<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+												<div class="spec-value">Auto</div>
+											</div>
+											<div class="spec-group group-row">
+												<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+												<div class="spec-value">25 KM/L</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-lg-4">
+									<div class="header__image--wrapper">
+										<div class="df-image-wrapper">
+											<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+										</div>
+									</div>
+									<div class="vehicle__ratings--wrapper">
+										<div class="spec-row"><i class="ti ti-star"></i> 4 Stars</div>
+										<div class="spec-row"><i class="ti ti-steering-wheel"></i> 156 Drives</div>
+									</div>
+									<div class="fl-row gap-2 al-center py-sm">
+										<button class="btn btn-global btn--primary w-100">Book Now</button>
+									</div>
+								</div>
+							</div>
+						</header>
+						<section class="rental-information my-ms">
+							<h3 class="heading-4">Rental Information</h3>
+							<div class="pt-sm">
+								<span class="info-title">
+									<span class="heading-5">Required Items</span>
+								</span>
+								<div class="info-checklist py-xs">
+									<div class="info-checklist--item">
+										<i class="ti ti-circle-check"></i> Passport or National ID Card
+									</div>
+									<div class="info-checklist--item">
+										<i class="ti ti-circle-check"></i> International / Local Driver's License
+									</div>
+									<div class="info-checklist--item">
+										<i class="ti ti-circle-check"></i> Prepaid Fee
+									</div>
+								</div>
+							</div>
+							<div class="py-sm">
+								<span class="info-title">
+									<span class="heading-5">Rules for Rental</span>
+								</span>
+								<div class="info-checklist py-xs">
+									<div class="info-checklist--item">
+										<span class="title">Security Deposit: </span> Rs. 10000
+										<em>Refundable on Vehicle Return</em>
+									</div>
+									<div class="info-checklist--item">
+										<span class="title">Driving Limit: </span> 500 KM
+										<em>On Excess, Rs. 100 per KM will be charged</em>
+									</div>
+									<div class="info-checklist--item">
+										<span class="title">Area Limit: </span> Within Location Bounds
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="more-like-this--section">
+							<h3 class="heading-5 mb-sm">More Like this vehicle</h3>
+							<div class="row">
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="vehicle__card">
+										<div class="location--wrapper">Inside Area Only</div>
+										<div class="vehicle__card--image df-image-wrapper">
+											<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+										</div>
+										<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+										<div class="vehicle__card--text-wrapper">
+											<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+											<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+											<div class="vehicle__card--spec-grid py-xs">
+												<div class="spec-group group-row">
+													<div class="spec-title">Color:</div>
+													<div class="spec-value">
+														<div class="color-value">
+															<div class="color-circle" style="--color: #dc0019"></div>
+															Scarlet
+														</div>
+													</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+													<div class="spec-value">5 Seats</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">Auto</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">25 KM/L</div>
+												</div>
+											</div>
+
+											<div class="vehicle__card--action-group">
+												<button class="btn btn-global btn--grey">Check Out</button>
+												<button class="btn btn-global btn--primary">Book Now</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="vehicle__card">
+										<div class="location--wrapper">Inside Area Only</div>
+										<div class="vehicle__card--image df-image-wrapper">
+											<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+										</div>
+										<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+										<div class="vehicle__card--text-wrapper">
+											<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+											<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+											<div class="vehicle__card--spec-grid py-xs">
+												<div class="spec-group group-row">
+													<div class="spec-title">Color:</div>
+													<div class="spec-value">
+														<div class="color-value">
+															<div class="color-circle" style="--color: #dc0019"></div>
+															Scarlet
+														</div>
+													</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+													<div class="spec-value">5 Seats</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">Auto</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">25 KM/L</div>
+												</div>
+											</div>
+
+											<div class="vehicle__card--action-group">
+												<button class="btn btn-global btn--grey">Check Out</button>
+												<button class="btn btn-global btn--primary">Book Now</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="vehicle__card">
+										<div class="location--wrapper">Inside Area Only</div>
+										<div class="vehicle__card--image df-image-wrapper">
+											<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+										</div>
+										<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+										<div class="vehicle__card--text-wrapper">
+											<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+											<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+											<div class="vehicle__card--spec-grid py-xs">
+												<div class="spec-group group-row">
+													<div class="spec-title">Color:</div>
+													<div class="spec-value">
+														<div class="color-value">
+															<div class="color-circle" style="--color: #dc0019"></div>
+															Scarlet
+														</div>
+													</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+													<div class="spec-value">5 Seats</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">Auto</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">25 KM/L</div>
+												</div>
+											</div>
+
+											<div class="vehicle__card--action-group">
+												<button class="btn btn-global btn--grey">Check Out</button>
+												<button class="btn btn-global btn--primary">Book Now</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="vehicle__card">
+										<div class="location--wrapper">Inside Area Only</div>
+										<div class="vehicle__card--image df-image-wrapper">
+											<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
+										</div>
+										<div class="vehicle__card--price-wrapper">Rs. 2500</div>
+
+										<div class="vehicle__card--text-wrapper">
+											<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
+
+											<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
+											<div class="vehicle__card--spec-grid py-xs">
+												<div class="spec-group group-row">
+													<div class="spec-title">Color:</div>
+													<div class="spec-value">
+														<div class="color-value">
+															<div class="color-circle" style="--color: #dc0019"></div>
+															Scarlet
+														</div>
+													</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Seats <i class="ti ti-users"></i></div>
+													<div class="spec-value">5 Seats</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Transmission <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">Auto</div>
+												</div>
+												<div class="spec-group group-row">
+													<div class="spec-title">Mileage <i class="ti ti-hexagon"></i></div>
+													<div class="spec-value">25 KM/L</div>
+												</div>
+											</div>
+
+											<div class="vehicle__card--action-group">
+												<button class="btn btn-global btn--grey">Check Out</button>
+												<button class="btn btn-global btn--primary">Book Now</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="dist/js/jquery.js"></script>
+		<script src="dist/js/tabler.js"></script>
+		<script src="dist/js/popper.js"></script>
+		<script src="dist/js/bootstrap.js"></script>
+		<script src="dist/js/swipper.js"></script>
+		<script src="dist/js/custom.js"></script>
+	</body>
+</html>
