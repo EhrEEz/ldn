@@ -84,7 +84,6 @@ export const getCurrentUser = async (
 				Authorization: `Bearer ${accessRefresh.access}`
 			}
 		});
-		console.log(accessRefresh.access);
 		if (res.status === 400) {
 			const data = await res.json();
 			const error = data.user.error[0];

@@ -194,7 +194,6 @@
 				loading...
 			{:then vehicles}
 				{#each vehicles as vehicle}
-					{console.log(vehicle)}
 					<div class="col-6 col-md-4 col-lg-3">
 						<div class="vehicle__card">
 							<div class="location--wrapper">

@@ -32,7 +32,7 @@ export interface MainVehicle {
 	is_active?: boolean;
 	slug?: string;
 	vehicle_image?: string;
-	vehicle_daily_price: string;
+	vehicle_daily_price: number;
 	location_area?: true;
 	vehicle_location?: string;
 	transmission?: string;
@@ -42,5 +42,6 @@ export interface MainVehicle {
 		id: string;
 		full_name: string;
 	};
+	vehicle_name?: string;
 	vehicle_city?: number;
 }

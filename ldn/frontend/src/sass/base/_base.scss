@@ -1,5 +1,5 @@
-@use "../base/_variables.scss" as *;
-@use "../base/_mixins.scss" as *;
+@use '../base/_variables.scss' as *;
+@use '../base/_mixins.scss' as *;
 
 :root {
 	font-size: clamp(#{$font-size}, 0.9vw, 15px);
@@ -11,7 +11,7 @@ html {
 body {
 	font-family: $primary-font;
 	color: $text-color;
-	font-size: clamp(#{$font-size}, 0.9vw, 15px);
+	font-size: clamp(#{$font-size}, 0.9vw, 16px);
 	::selection {
 		background-color: $indigo;
 		color: #fff;
@@ -367,7 +367,7 @@ ul.bulleted {
 .select-control {
 	position: relative;
 	&:after {
-		content: "\ea5f";
+		content: '\ea5f';
 		@extend %icon;
 		position: absolute;
 		right: 1em;
@@ -403,7 +403,7 @@ label {
 		border: 2px solid #999;
 		position: relative;
 		&:after {
-			content: "";
+			content: '';
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -440,7 +440,7 @@ label {
 .select-wrapper {
 	position: relative;
 	&:after {
-		content: "";
+		content: '';
 		// @extend %icon;
 		display: block;
 		position: absolute;
@@ -486,7 +486,7 @@ textarea.form-control {
 			color: $secondary-color;
 			font-size: smaller;
 			font-weight: 800;
-			content: "\ea5e";
+			content: '\ea5e';
 			@extend %icon;
 		}
 	}

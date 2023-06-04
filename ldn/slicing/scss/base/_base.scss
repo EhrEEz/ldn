@@ -483,7 +483,7 @@ textarea.form-control {
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%) scale(0);
-			color: $secondary-color;
+			color: $white;
 			font-size: smaller;
 			font-weight: 800;
 			content: "\ea5e";
@@ -500,12 +500,12 @@ textarea.form-control {
 		opacity: 0;
 
 		&:focus ~ .checkmark {
-			border-color: $secondary-color;
+			background-color: $primary-color;
 			box-shadow: 0 0 3px #00aad2;
 		}
 
 		&:checked ~ .checkmark {
-			border-color: $secondary-color;
+			background-color: $primary-color;
 			&:after {
 				transform: translate(-50%, -50%) scale(1);
 			}

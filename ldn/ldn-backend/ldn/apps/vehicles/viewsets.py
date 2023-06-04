@@ -134,6 +134,7 @@ class BookingCreateView(CreateAPIView):
             renter_user_data["renter"] = request.user.id
         else:
             raise exceptions(401, "Authentication Error")
+
         s = self.get_serializer(data=renter_user_data)
         s.is_valid(raise_exception=True)
         booking = s.save()

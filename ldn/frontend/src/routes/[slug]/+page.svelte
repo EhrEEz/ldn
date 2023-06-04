@@ -1,7 +1,6 @@
 <script lang="ts">
 	export let data;
 	const vehicleDetails = data;
-	console.log(vehicleDetails);
 </script>
 
 <div class="py-sm">
@@ -74,11 +73,13 @@
 								</div>
 							</div>
 							<div class="vehicle__ratings--wrapper">
-								<div class="spec-row"><i class="ti ti-star" /> 4 Stars</div>
 								<div class="spec-row"><i class="ti ti-steering-wheel" /> 156 Drives</div>
+								<div class="spec-row"><i class="ti ti-steering-wheel" /> 9000 KM Driven</div>
 							</div>
 							<div class="fl-row gap-2 al-center py-sm">
-								<button class="btn btn-global btn--primary w-100">Book Now</button>
+								<a href="/book/{vehicleDetails.slug}" class="btn btn-global btn--primary w-100"
+									>Book Now</a
+								>
 							</div>
 						</div>
 					</div>
@@ -116,183 +117,6 @@
 							</div>
 							<div class="info-checklist--item">
 								<span class="title">Area Limit: </span> Within Location Bounds
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="more-like-this--section">
-					<h3 class="heading-5 mb-sm">More Like this vehicle</h3>
-					<div class="row">
-						<div class="col-6 col-md-4 col-lg-3">
-							<div class="vehicle__card">
-								<div class="location--wrapper">Inside Area Only</div>
-								<div class="vehicle__card--image df-image-wrapper">
-									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
-								</div>
-								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
-
-								<div class="vehicle__card--text-wrapper">
-									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
-
-									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
-									<div class="vehicle__card--spec-grid py-xs">
-										<div class="spec-group group-row">
-											<div class="spec-title">Color:</div>
-											<div class="spec-value">
-												<div class="color-value">
-													<div class="color-circle" style="--color: #dc0019" />
-													Scarlet
-												</div>
-											</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Seats <i class="ti ti-users" /></div>
-											<div class="spec-value">5 Seats</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Transmission <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">Auto</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Mileage <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">25 KM/L</div>
-										</div>
-									</div>
-
-									<div class="vehicle__card--action-group">
-										<button class="btn btn-global btn--grey">Check Out</button>
-										<button class="btn btn-global btn--primary">Book Now</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-4 col-lg-3">
-							<div class="vehicle__card">
-								<div class="location--wrapper">Inside Area Only</div>
-								<div class="vehicle__card--image df-image-wrapper">
-									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
-								</div>
-								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
-
-								<div class="vehicle__card--text-wrapper">
-									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
-
-									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
-									<div class="vehicle__card--spec-grid py-xs">
-										<div class="spec-group group-row">
-											<div class="spec-title">Color:</div>
-											<div class="spec-value">
-												<div class="color-value">
-													<div class="color-circle" style="--color: #dc0019" />
-													Scarlet
-												</div>
-											</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Seats <i class="ti ti-users" /></div>
-											<div class="spec-value">5 Seats</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Transmission <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">Auto</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Mileage <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">25 KM/L</div>
-										</div>
-									</div>
-
-									<div class="vehicle__card--action-group">
-										<button class="btn btn-global btn--grey">Check Out</button>
-										<button class="btn btn-global btn--primary">Book Now</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-4 col-lg-3">
-							<div class="vehicle__card">
-								<div class="location--wrapper">Inside Area Only</div>
-								<div class="vehicle__card--image df-image-wrapper">
-									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
-								</div>
-								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
-
-								<div class="vehicle__card--text-wrapper">
-									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
-
-									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
-									<div class="vehicle__card--spec-grid py-xs">
-										<div class="spec-group group-row">
-											<div class="spec-title">Color:</div>
-											<div class="spec-value">
-												<div class="color-value">
-													<div class="color-circle" style="--color: #dc0019" />
-													Scarlet
-												</div>
-											</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Seats <i class="ti ti-users" /></div>
-											<div class="spec-value">5 Seats</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Transmission <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">Auto</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Mileage <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">25 KM/L</div>
-										</div>
-									</div>
-
-									<div class="vehicle__card--action-group">
-										<button class="btn btn-global btn--grey">Check Out</button>
-										<button class="btn btn-global btn--primary">Book Now</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-6 col-md-4 col-lg-3">
-							<div class="vehicle__card">
-								<div class="location--wrapper">Inside Area Only</div>
-								<div class="vehicle__card--image df-image-wrapper">
-									<img src="images/cars/grand-i10-nios-pc.webp" alt="" />
-								</div>
-								<div class="vehicle__card--price-wrapper">Rs. 2500</div>
-
-								<div class="vehicle__card--text-wrapper">
-									<h4 class="heading-4 title-wrapper">Hyundai I20</h4>
-
-									<div class="vehicle__bound">Sohrakhutte, Kathmandu</div>
-									<div class="vehicle__card--spec-grid py-xs">
-										<div class="spec-group group-row">
-											<div class="spec-title">Color:</div>
-											<div class="spec-value">
-												<div class="color-value">
-													<div class="color-circle" style="--color: #dc0019" />
-													Scarlet
-												</div>
-											</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Seats <i class="ti ti-users" /></div>
-											<div class="spec-value">5 Seats</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Transmission <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">Auto</div>
-										</div>
-										<div class="spec-group group-row">
-											<div class="spec-title">Mileage <i class="ti ti-hexagon" /></div>
-											<div class="spec-value">25 KM/L</div>
-										</div>
-									</div>
-
-									<div class="vehicle__card--action-group">
-										<button class="btn btn-global btn--grey">Check Out</button>
-										<button class="btn btn-global btn--primary">Book Now</button>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
