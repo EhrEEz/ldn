@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LDN</title>
+		<link rel="stylesheet" href="dist/css/style.min.css" />
+	</head>
+	<body>
+		<nav class="nav nav__main">
+			<div class="nav-logo-wrapper"></div>
+			<form action="#" method="get">
+				<div class="nav__search--wrapper">
+					<div class="form-group select location">
+						<i class="icon ti ti-map-pin"></i>
+						<select name="location" id="location" class="form-control">
+							<option value="kathmandu">kathmandu</option>
+							<option value="lalitpur">lalitpur</option>
+							<option value="bhaktapur">bhaktapur</option>
+							<option value="chitwan">chitwan</option>
+							<option value="pokhara">pokhara</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="date" name="startDate" id="startDate" class="form-control" />
+					</div>
+					<div class="form-group">
+						<input type="date" name="endDate" id="endDate" class="form-control" />
+					</div>
+					<div class="button-group">
+						<button class="btn btn-global btn--primary">Search</button>
+					</div>
+				</div>
+			</form>
+			<div class="nav__rt-wrapper fl-row gap-2 al-center">
+				<div class="nav__notification-group notification-main">
+					<button class="btn btn-round-md btn--grey notification-base">
+						<i class="ti ti-bell"></i>
+					</button>
+					<div class="notification-drop">
+						<ul class="notification-list"></ul>
+					</div>
+				</div>
+				<div class="nav__user--group user__main dropdown-main">
+					<div class="nav__user--dropdown user__base dropdown-base">
+						<div class="user__base--image dropdown-base--image">
+							<img src="images/user.png" alt="User" />
+						</div>
+						<div class="user__base--text dropdown-base--text">Ares Shrestha</div>
+						<div class="user__base--icon dropdown-base--icon">
+							<i class="ti ti-chevron-down"></i>
+						</div>
+					</div>
+					<div class="user__drop dropdown-drop">
+						<ul class="user__options dropdown-options">
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Settings</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-settings"></i
+									></span>
+								</a>
+							</li>
+							<li class="user__option--item dropdown-option--item">
+								<a href="#" class="user__option--link dropdown-option--link">
+									<span class="user__option--text dropdown-option--text">Logout</span>
+									<span class="user__option--icon dropdown-option--icon"
+										><i class="ti ti-logout"></i
+									></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main id="app" class="py-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="button--wrapper mb-ms">
+							<a href="#" class="btn btn-global btn--grey">
+								<i class="ti ti-chevron-left"></i> Go Back
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<h1 class="heading-3">Your Bookings</h1>
+						<div class="booking--table">
+							<div class="booking--card">
+								<div class="booking--title">2021-12-23</div>
+								<div class="booking--information">
+									<div class="info--wrapper">
+										<div class="info--label">Booking ID</div>
+										<div class="info--value">90129sdf-asdfjlk0-asdf</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">From</div>
+										<div class="info--value">2021-12-23</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">To</div>
+										<div class="info--value">2021-12-25</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">Vehicle</div>
+										<div class="info--value">Hyundai I20</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">Total Cost</div>
+										<div class="info--value"><h3 class="heading-3">Rs.12700</h3></div>
+									</div>
+									<div class="info--wrapper">
+										<a href="#" class="btn btn-global btn--primary">View More Details</a>
+									</div>
+								</div>
+							</div>
+							<div class="booking--card">
+								<div class="booking--title">2021-12-23</div>
+								<div class="booking--information">
+									<div class="info--wrapper">
+										<div class="info--label">Booking ID</div>
+										<div class="info--value">90129sdf-asdfjlk0-asdf</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">From</div>
+										<div class="info--value">2021-12-23</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">To</div>
+										<div class="info--value">2021-12-25</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">Vehicle</div>
+										<div class="info--value">Hyundai I20</div>
+									</div>
+									<div class="info--wrapper">
+										<div class="info--label">Total Cost</div>
+										<div class="info--value"><h3 class="heading-3">Rs.12700</h3></div>
+									</div>
+									<div class="info--wrapper">
+										<a href="#" class="btn btn-global btn--primary">View More Details</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="dist/js/jquery.js"></script>
+		<script src="dist/js/tabler.js"></script>
+		<script src="dist/js/popper.js"></script>
+		<script src="dist/js/bootstrap.js"></script>
+		<script src="dist/js/swipper.js"></script>
+		<script src="dist/js/custom.js"></script>
+	</body>
+</html>

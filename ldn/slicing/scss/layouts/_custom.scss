@@ -452,3 +452,31 @@ body {
 		text-decoration: underline;
 	}
 }
+
+.booking {
+	&--table {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		padding-block: 2em;
+		gap: 1em;
+	}
+	&--card {
+		background-color: #f7f7f7;
+		border-radius: 10px;
+		padding: 1em 2em;
+	}
+	&--information {
+		padding-block: 1em;
+		display: flex;
+		gap: 1.5em;
+		flex-wrap: wrap;
+		.info--wrapper {
+			width: 30%;
+		}
+	}
+	&--title {
+		padding-block: 0.5em;
+		border-bottom: 1px solid #eee;
+	}
+}
