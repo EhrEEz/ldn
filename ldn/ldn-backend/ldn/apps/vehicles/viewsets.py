@@ -85,7 +85,6 @@ class LocationListView(ListAPIView):
 class BookingDetailsCreateView(CreateAPIView):
     queryset = BookingDetails.objects.all()
     serializer_class = BookingDetailsSerializer
-    serializer_class = BookingSerializer
     permission_classes = (IsAuthenticated,)
 
 
@@ -134,7 +133,6 @@ class BookingCreateView(CreateAPIView):
             renter_user_data["renter"] = request.user.id
         else:
             raise exceptions(401, "Authentication Error")
-
         s = self.get_serializer(data=renter_user_data)
         s.is_valid(raise_exception=True)
         booking = s.save()
@@ -249,3 +247,14 @@ class CreatePaymentView(CreateAPIView):
 class CancelBookingView(CreateAPIView):
     queryset = TerminateBooking.objects.all()
     serailizer_class = TerminateBookingSerializer
+
+
+class UserVehiclesView(ListAPIView):
+    queryset = Vehicle.objects.all()
+    serializer_class = VehicleSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        queryset = self.queryset
+        queryset = queryset.filter(vehicle_owner=self.request.user)
+        return queryset

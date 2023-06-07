@@ -178,6 +178,41 @@ export const handlePostRequestsWithPermissions = async (
 	}
 };
 
+export const handleGetRequestsWithPermissions = async (
+	fetch: any,
+	targetUrl: string
+): Promise<[object[], Array<CustomError>]> => {
+	const res = await fetch(`${variables.BASE_API_URI}/token/refresh/`, {
+		method: 'POST',
+		mode: 'cors',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			refresh: `${browserGet('refreshToken')}`
+		})
+	});
+	const accessRefresh = await res.json();
+	const jres = await fetch(targetUrl, {
+		method: 'GET',
+		mode: 'cors',
+		headers: {
+			Authorization: `Bearer ${accessRefresh.access}`,
+			'Content-Type': 'application/json'
+		}
+	});
+
+	if (jres.status !== 200) {
+		const data = await jres.json();
+		const errs = data.errors;
+		if (errs.length) {
+			console.error(JSON.stringify(errs));
+			return [[], errs];
+		}
+	}
+	return [jres.json(), []];
+};
+
 export const UpdateField = async (
 	fieldName: string,
 	fieldValue: string,

@@ -15,9 +15,7 @@ class UserManager(BaseUserManager):  # type: ignore
     """UserManager class."""
 
     # type: ignore
-    def create_user(
-        self, phone_number: str, password: Optional[str] = None
-    ) -> "User":
+    def create_user(self, phone_number: str, password: Optional[str] = None) -> "User":
         """Create and return a `User` with an email, phone_number and password."""
         if phone_number is None:
             raise TypeError("Users must have a Phone Number.")
@@ -69,6 +67,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    is_seller = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     bio = models.TextField(null=True)

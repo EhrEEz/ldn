@@ -6,9 +6,11 @@
 	import { fly } from 'svelte/transition';
 	import { afterUpdate, onMount } from 'svelte';
 
-	import '$lib/dist/js/admin.js';
+	import Header from '$lib/components/Header/Header.svelte';
+	import Loader from '$lib/components/Loader/Loader.svelte';
 
 	import '$lib/dist/css/style.min.css';
+	import '../../sass/app.scss';
 	$: loading.setNavigate(!!$navigating);
 	$: loading.setLoading(!!$navigating, 'Loading, please wait...');
 
@@ -60,6 +62,8 @@
 	/>
 </svelte:head>
 
+<Header />
+
 {#if $notificationData}
 	<p
 		class="notification"
@@ -71,4 +75,9 @@
 	</p>
 {/if}
 
-<slot />
+<main>
+	<Loader />
+	<slot />
+</main>
+
+<footer in:fly={{ y: -50, duration: 500, delay: 500 }} out:fly={{ duration: 500 }} />

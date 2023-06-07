@@ -7,6 +7,7 @@ from .viewsets import (
     LocationListView,
     BookingCreateView,
     StatisticsRetrieveView,
+    UserVehiclesView,
 )
 
 urlpatterns = [
@@ -14,6 +15,11 @@ urlpatterns = [
     path(
         "vehicle/<slug:vehicle_main__slug>/",
         VehicleDetailView.as_view(),
+        name="vehicle-detail",
+    ),
+    path(
+        "user-vehicles/",
+        UserVehiclesView.as_view(),
         name="vehicle-detail",
     ),
     path("locations/", LocationListView.as_view(), name="active-locations"),

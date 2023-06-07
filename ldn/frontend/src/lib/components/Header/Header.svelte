@@ -77,13 +77,11 @@
 			</div>
 			{#if !$userData.phone_number}
 				<div class="button-wrapper fl-row gap-2 al-center">
-					<a sveltekit:prefetch class="btn btn-global btn--grey" href="/accounts/register"
-						>Register</a
-					>
-					<a sveltekit:prefetch class="btn btn-global btn--primary" href="/accounts/login">Login</a>
+					<a class="btn btn-global btn--grey" href="/register">Register</a>
+					<a class="btn btn-global btn--primary" href="/login">Login</a>
 				</div>
 			{:else}
-				<a sveltekit:prefetch href="/accounts/user/{$userData.phone_number}-{$userData.id}">
+				<a href="/user/{$userData.phone_number}-{$userData.id}">
 					<div class="nav__user--group user__main dropdown-main">
 						<div class="nav__user--dropdown user__base dropdown-base">
 							<div class="user__base--image dropdown-base--image">

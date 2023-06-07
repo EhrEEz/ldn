@@ -31,7 +31,7 @@
 		duration = 0;
 	}
 	const handleBookingSubmit = async () => {
-		const res = await handlePostRequestsWithPermissions(
+		const [res, err] = await handlePostRequestsWithPermissions(
 			fetch,
 			`${variables.BASE_MAIN_URI}/vehicles/booking/create/`,
 			{
@@ -40,7 +40,11 @@
 				booking_end_date: booking_end_date
 			}
 		);
-		return res;
+		if (err.length === 0) {
+			return res;
+		} else {
+			throw new Error('Something went Wrong');
+		}
 	};
 	let submission: Promise<any> = Promise.resolve();
 	const handleSubmit = () => {
@@ -52,6 +56,7 @@
 <svelte:head>
 	<title>Book Vehicle</title>
 </svelte:head>
+
 {#if !submitting}
 	<section class="book__vehicle--secrtion py-ms">
 		<div class="con mx-lg">
@@ -179,6 +184,53 @@
 	{#await submission}
 		Submitting...
 	{:then res}
-		{res}
+		{console.log(res)}
+		<section class="booking__result--section py-lg">
+			<div class="con">
+				<div class="row justify-content-center align-items-stretch">
+					<div class="col-lg-6">
+						<div class="card confirmation__card">
+							<h2 class="confirmation--title mb-sm">Your Booking has been submitted</h2>
+							<div class="fl-row fl-wrap gap-2">
+								<div class="info--wrapper">
+									<div class="info--label">Booking ID</div>
+									<div class="info--value">{res.main.id}</div>
+								</div>
+								<div class="info--wrapper">
+									<div class="info--label">Booking Date</div>
+									<div class="info--value">
+										{moment(res.main.creation_date).format('YYYY-MM-DD')}
+									</div>
+								</div>
+								<div class="info--wrapper">
+									<div class="info--label">Booking Start Date</div>
+									<div class="info--value">{res.main.booking_start_date}</div>
+								</div>
+								<div class="info--wrapper">
+									<div class="info--label">Booking End Date</div>
+									<div class="info--value">{res.main.booking_end_date}</div>
+								</div>
+								<div class="info--wrapper">
+									<div class="info--label">Duration</div>
+									<div class="info--value">
+										<h3 class="heading-">{res.main.booking_total_days}</h3>
+									</div>
+								</div>
+								<div class="info--wrapper">
+									<div class="info--label">Price of Booking</div>
+									<div class="info--value"><h3 class="heading-">Rs. {res.main.total_cost}</h3></div>
+								</div>
+								<div class="button--wrapper">
+									<a
+										href="/accounts/user/{res.main.renter}/bookings/{res.main.id}"
+										class="btn btn-global btn--primary">View Booking Details</a
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	{/await}
 {/if}

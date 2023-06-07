@@ -139,9 +139,9 @@ class VehicleDetails(BaseModel):
 
 class Booking(BaseModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    vehicle = models.ForeignKey(Vehicle, on_delete=models.SET("deleted"))
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
     renter = models.ForeignKey(
-        User, on_delete=models.SET("deleted"), limit_choices_to={"is_staff": False}
+        User, on_delete=models.CASCADE, limit_choices_to={"is_staff": False}
     )
     is_confirmed = models.BooleanField("Booking Confirmed", default=False, null=True)
     booking_start_date = models.DateField("Booking Start Date")
@@ -211,7 +211,7 @@ class TerminateBooking(BaseModel):
     )
     booking = models.OneToOneField(
         Booking,
-        on_delete=models.SET("Deleted"),
+        on_delete=models.CASCADE,
         verbose_name="Payment for booking",
         primary_key=True,
     )
@@ -220,9 +220,7 @@ class TerminateBooking(BaseModel):
 
 
 class VehicleStatistics(BaseModel):
-    vehicle = models.OneToOneField(
-        Vehicle, on_delete=models.SET("Deleted"), primary_key=True
-    )
+    vehicle = models.OneToOneField(Vehicle, on_delete=models.CASCADE, primary_key=True)
 
     total_earnings = models.DecimalField(
         "Total Earnings till Date", decimal_places=0, max_digits=16, default=0
